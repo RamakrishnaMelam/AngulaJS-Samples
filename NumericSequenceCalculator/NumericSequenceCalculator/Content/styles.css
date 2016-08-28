@@ -1,0 +1,54 @@
+﻿.header {
+    display: block;
+    background-color: #dddddd;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left,rgba(255,0,0,0),#04B4AE); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,rgba(255,0,0,0),#04B4AE); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,rgba(255,0,0,0)#04B4AE); /*Fx 3.6-15*/
+    background: linear-gradient(to right, rgba(255,0,0,0),#04B4AE); /*Standard*/
+    color: #fff;
+   text-shadow: 2px 2px #1396BA;
+}
+
+fieldset {
+    font-size: 20px;
+    border:solid 1px #1396BA;
+    border-radius: 5px;
+    display: table;
+}
+
+@media screen and (max-width: 280px) {
+    fieldset {
+        font-size: 15px;
+    }
+}
+.results {
+     background: #DCF3FA;
+     text-shadow: 1px 1px grey;
+}
+.container {
+    
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+    padding: 5px;
+}
+
+.leftcell {
+    width: 22%;
+}
+
+input[type=number] {
+    padding: 5px;
+    border: 2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
