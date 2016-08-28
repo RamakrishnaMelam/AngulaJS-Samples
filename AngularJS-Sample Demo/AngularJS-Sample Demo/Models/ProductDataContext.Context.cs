@@ -13,10 +13,10 @@ namespace AngularJS_Sample_Demo.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AngularDemoEntities : DbContext
+    public partial class ProductDBEntities : DbContext
     {
-        public AngularDemoEntities()
-            : base("name=AngularDemoEntities")
+        public ProductDBEntities()
+            : base("name=ProductDBEntities")
         {
         }
     

@@ -10,7 +10,7 @@ namespace AngularJS_Sample_Demo.Repositories
 
     public class ProductRepository : IProductRepository
     {
-        AngularDemoEntities ProductDB = new AngularDemoEntities();
+        ProductDBEntities ProductDB = new ProductDBEntities();
 
         public IEnumerable<TblProductList> GetAll()
         {

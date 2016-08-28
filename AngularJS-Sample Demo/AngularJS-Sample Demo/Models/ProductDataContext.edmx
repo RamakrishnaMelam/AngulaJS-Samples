@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AngularDemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="AngularDemoModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TblProductList">
           <Key>
             <PropertyRef Name="Id" />
@@ -14,14 +14,14 @@
           <Property Name="Category" Type="varchar" MaxLength="20" />
           <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
-        <EntityContainer Name="AngularDemoModelStoreContainer">
+        <EntityContainer Name="AngularDemoModel1StoreContainer">
           <EntitySet Name="TblProductList" EntityType="Self.TblProductList" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AngularDemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="AngularDemoModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="TblProductList">
           <Key>
             <PropertyRef Name="Id" />
@@ -31,7 +31,7 @@
           <Property Name="Category" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
         </EntityType>
-        <EntityContainer Name="AngularDemoEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProductDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TblProductLists" EntityType="Self.TblProductList" />
         </EntityContainer>
       </Schema>
@@ -39,9 +39,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AngularDemoModelStoreContainer" CdmEntityContainer="AngularDemoEntities">
+        <EntityContainerMapping StorageEntityContainer="AngularDemoModel1StoreContainer" CdmEntityContainer="ProductDBEntities">
           <EntitySetMapping Name="TblProductLists">
-            <EntityTypeMapping TypeName="AngularDemoModel.TblProductList">
+            <EntityTypeMapping TypeName="AngularDemoModel1.TblProductList">
               <MappingFragment StoreEntitySet="TblProductList">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

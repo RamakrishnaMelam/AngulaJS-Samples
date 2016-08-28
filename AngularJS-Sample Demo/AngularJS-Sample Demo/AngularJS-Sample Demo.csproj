@@ -142,15 +142,15 @@
   <ItemGroup>
     <Content Include="Content\CustomStyle.css" />
     <Content Include="Global.asax" />
-    <Content Include="Models\ProductDBEntities.Context.tt">
+    <Content Include="Models\ProductDataContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductDBEntities.edmx</DependentUpon>
-      <LastGenOutput>ProductDBEntities.Context.cs</LastGenOutput>
+      <DependentUpon>ProductDataContext.edmx</DependentUpon>
+      <LastGenOutput>ProductDataContext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ProductDBEntities.tt">
+    <Content Include="Models\ProductDataContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductDBEntities.edmx</DependentUpon>
-      <LastGenOutput>ProductDBEntities.cs</LastGenOutput>
+      <DependentUpon>ProductDataContext.edmx</DependentUpon>
+      <LastGenOutput>ProductDataContext.cs</LastGenOutput>
     </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
@@ -181,12 +181,12 @@
     <Content Include="scripts\angular-touch.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
-    <EntityDeploy Include="Models\ProductDBEntities.edmx">
+    <EntityDeploy Include="Models\ProductDataContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProductDBEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>ProductDataContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ProductDBEntities.edmx.diagram">
-      <DependentUpon>ProductDBEntities.edmx</DependentUpon>
+    <Content Include="Models\ProductDataContext.edmx.diagram">
+      <DependentUpon>ProductDataContext.edmx</DependentUpon>
     </Content>
     <None Include="scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="scripts\AngularDemo.js" />
@@ -205,23 +205,23 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interface\IProductRepository.cs" />
-    <Compile Include="Models\ProductDBEntities.Context.cs">
+    <Compile Include="Models\ProductDataContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductDBEntities.Context.tt</DependentUpon>
+      <DependentUpon>ProductDataContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProductDBEntities.cs">
+    <Compile Include="Models\ProductDataContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductDBEntities.tt</DependentUpon>
+      <DependentUpon>ProductDataContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProductDBEntities.Designer.cs">
+    <Compile Include="Models\ProductDataContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductDBEntities.edmx</DependentUpon>
+      <DependentUpon>ProductDataContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\TblProductList.cs">
-      <DependentUpon>ProductDBEntities.tt</DependentUpon>
+      <DependentUpon>ProductDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
