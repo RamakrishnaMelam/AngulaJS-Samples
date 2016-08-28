@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/angular1.5.6.js"></script>
+    <link href="Content/styles.css" rel="stylesheet"/>
+    <script src="Scripts/app.js"></script>
+</head>
+<body>
+<div class="header">
+    Number Sequence Calculator
+</div>
+<fieldset ng-app="calculator-app" ng-controller="calculator-controller">
+    <legend>Please Select Number Sequence option. </legend>
+    <ul class="container">
+        <li ng-repeat="calculation in calculations" class="row">
+            <label class="cell">
+                <input type="radio" ng-model="$parent.defaultcalculation"
+                       name="name" value="{{calculation.name}}" required="required" ng-click="calculate()"/>
+            </label>
+            <label class="cell leftcell">{{calculation.name}}</label>
+            <div class="cell">{{calculation.description}}.</div>
+        </li>
+    </ul>
+    <div style="text-align: center;">
+        <input type="number" name="fthenumber" id="fthenumber" ng-model="number" min="0" placeholder="Entere Input Number" ng-change="calculate()">
+    </div>
+    <div class="results" ng-if="result">
+        <p>
+            <strong>
+                {{defaultcalculation}}:
+            </strong>.
+        </p>
+        <div id="divCalculateSequence">
+            <div class="tbl">
+                <div class="row">
+                    <div class="cell">
+                        <label id="lblResult">{{result}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+<script type="text/javascript">
+    var calculator_app = angular.module('calculator-app', []);
+    calculator_app.controller('calculator-controller',
+        function($scope) {
+            var calculations = [
+                { "name": "All Numbers", "description": "All Numbers up to and including the number entered." },
+                { "name": "All Odd Numbers", "description": "All odd numbers up to and including the number entered." },
+                {
+                    "name": "All Even Numbers",
+                    "description": "All even numbers up to and including the number entered."
+                },
+                {
+                    "name": "Special Case",
+                    "description":
+                        "All numbers up to and including the number entered, except when,A number is a multiple of 3 output C, and when,A number is a multiple of 5 output E, and when,A number is a multiple of 5 output E, and when,A number is a multiple of both 3 and 5 output Z."
+                },
+                {
+                    "name": "All Fibonacci Numbers",
+                    "description": "All fibonacci number up to and including the number entered."
+                }
+            ];
+
+            $scope.calculations = calculations;
+            $scope.defaultcalculation = 'All Numbers';
+
+            $scope.calculate = function() {
+                var source = $scope.defaultcalculation;
+                var number = $scope.number;
+                switch (source) {
+                case "All Numbers":
+                    $scope.result = calculateAllSequence(number);
+                    break;
+                case "All Odd Numbers":
+                    $scope.result = calculateAllOddSequence(number);
+                    break;
+                case "All Even Numbers":
+                    $scope.result = calculateAllEvenSequence(number);
+                    break;
+                case "Special Case":
+                    $scope.result = calculateAllSpecialSequence(number);
+                    break;
+                case "All Fibonacci Numbers":
+                    $scope.result = calculateFibonacciSequence(number);
+                    break;
+                default:
+                }
+            };
+        });
+</script>
+</body>
+
+</html>
